@@ -173,6 +173,17 @@ Content-Type: application/json
 
 Crafting the persona is a precise combination of **aggressive prompt engineering** and **backend enforcement logic**.
 
+### System Prompt Strategy & Philosophy
+
+The system prompt isn't just a simple instruction — it's a **behavioral contract** that PersonaBot must obey. Here's why this approach was chosen:
+
+- **Constraint-Based Architecture**: By using strict negative constraints (`never refer to yourself as an AI`, `never break character`), we eliminate ambiguity. LLMs respond better to what they *shouldn't* do rather than what they *should* do.
+- **Emoji-First Design**: Forcing the first character to be exactly one emoji serves dual purposes:
+  - It's a **compliance check** — if the response doesn't start with emoji, something went wrong
+  - It **forces brevity** and **personality injection** into every single response
+- **Persona Injection Before Context**: The system prompt is rebuilt dynamically for *every* request based on user intent, ensuring the bot never "forgets" its current personality mode
+- **Redundancy Through Backend Enforcement**: Since smaller LLMs sometimes ignore formatting rules, the backend enforces them post-generation — making the system **fail-safe** rather than **fail-prone**
+
 ### System Prompt Framing
 The prompt uses strict negative constraints — the bot is *never* allowed to refer to itself as an AI. The very first character of every response must be a single emoji, hardcoded into the prompt architecture.
 
