@@ -123,15 +123,15 @@ Test the API via Postman or Insomnia.
 
 ### 1️⃣ Career-related Intelligent Response
 *(Shows the bot offering sharp, professional advice with the correct format)*
-![Career Response Screenshot](./assets/career-response.png)
+![Career Response Screenshot](./img1.png)
 
 ### 2️⃣ Non-Career Dumb/Funny Response
 *(Shows the bot acting clueless when asked about a non-career topic like cooking)*
-![Dumb Response Screenshot](./assets/dumb-response.png)
+![Dumb Response Screenshot](./img2.png)
 
 ### 3️⃣ Alien / Elvish Behavior Demonstration
 *(Shows a rare RNG trigger where the bot overrides behavior and acts like an Alien)*
-![Alien Override Screenshot](./assets/alien-response.png)
+![Alien Override Screenshot](./img3.png)
 
 ---
 
@@ -174,10 +174,3 @@ This dual-layered architecture transitions the bot from a stateless responder to
 > Obviously, I have no idea how Earth appliances are managed. So sorry! |||
 
 ---
-
-## 📌 Notes & Constraints
-
-- **No Frontend**: This project focuses solely on the backend API logic.
-- **LLM Engine**: We utilize the LLaMA-3.1 API via Groq. Groq provides exceptionally fast generation speeds required to quickly bounce dynamic personas back to the user.
-- **Strict Adherence**: The core challenge was taming the LLM. It's built rigidly around hard Negative Prompting and Backend Processing to ensure features like the single emoji and `" |||"` pause delimiters never fail. 
-- **In-Memory Limits**: The short-term memory clears when the Node.js server reboots. (Only the long-term JSON memory persists).
